@@ -1,19 +1,19 @@
-var DataTypes = require("sequelize").DataTypes;
-var _Account = require("./account");
-var _Datum = require("./datum");
-var _Geraet = require("./geraet");
-var _GeraetHasTrainingsplan = require("./geraet_has_trainingsplan");
-var _Kunde = require("./kunde");
-var _KundeHasStudioHasKurs = require("./kunde_has_studio_has_kurs");
-var _Kurs = require("./kurs");
-var _Mitarbeiter = require("./mitarbeiter");
-var _Studio = require("./studio");
-var _StudioHasGeraet = require("./studio_has_geraet");
-var _StudioHasKurs = require("./studio_has_kurs");
-var _StudioHasKursHasDatum = require("./studio_has_kurs_has_datum");
-var _Termin = require("./termin");
-var _Trainingsplan = require("./trainingsplan");
-var _Vertrag = require("./vertrag");
+import { DataTypes } from "sequelize";
+import _Account from "./account";
+import _Datum from "./datum";
+import _Geraet from "./geraet";
+import _GeraetHasTrainingsplan from "./geraet_has_trainingsplan";
+import _Kunde from "./kunde";
+import _KundeHasStudioHasKurs from "./kunde_has_studio_has_kurs";
+import _Kurs from "./kurs";
+import _Mitarbeiter from "./mitarbeiter";
+import _Studio from "./studio";
+import _StudioHasGeraet from "./studio_has_geraet";
+import _StudioHasKurs from "./studio_has_kurs";
+import _StudioHasKursHasDatum from "./studio_has_kurs_has_datum";
+import _Termin from "./termin";
+import _Trainingsplan from "./trainingsplan";
+import _Vertrag from "./vertrag";
 
 function initModels(sequelize) {
   var Account = _Account(sequelize, DataTypes);
@@ -95,6 +95,6 @@ function initModels(sequelize) {
     Vertrag,
   };
 }
-module.exports = initModels;
-module.exports.initModels = initModels;
-module.exports.default = initModels;
+export default initModels;
+const _initModels = initModels;
+export { _initModels as initModels };

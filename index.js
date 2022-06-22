@@ -1,12 +1,11 @@
 import 'dotenv/config';
 import * as readline from "readline";
-import _ from "lodash";
 import { b1 } from "./b1.js";
-import { b2 } from "./b2.js";
+import {task2 } from "./b2.js";
 import { auto, db } from "./db.js";
 
 
-const rl = readline.createInterface(process.stdin, process.stdout);
+export const rl = readline.createInterface(process.stdin, process.stdout);
 
 // testing connectin
 try {
@@ -17,5 +16,5 @@ try {
 }
 // auto.run()
 
-b1(rl, db);
-b2();
+// b1(rl, db);
+task2();
