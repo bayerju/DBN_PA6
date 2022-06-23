@@ -1,11 +1,15 @@
-import 'dotenv/config';
-import * as readline from "readline";
+// import { dotenv } from 'dotenv';
+import * as readlineSync from "readline-sync";
+import dotenv from "dotenv"
 import { b1 } from "./b1.js";
-import {task2 } from "./b2.js";
+import { task2 } from "./b2.js";
 import { auto, db } from "./db.js";
 
+dotenv.config();
 
-export const rl = readline.createInterface(process.stdin, process.stdout);
+export const rl = readlineSync;
+// export const rl = readline.createInterface(process.stdin, process.stdout);
+console.log(typeof (process.env.PORT))
 
 // testing connectin
 try {
@@ -16,5 +20,5 @@ try {
 }
 // auto.run()
 
-// b1(rl, db);
-task2();
+await b1();
+await task2();
